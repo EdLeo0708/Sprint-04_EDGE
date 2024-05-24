@@ -11,11 +11,17 @@ LINKS:
 
 
 Video YT de como ficou o projeto AO VIVO: 
+
+
 https://youtube.com/shorts/EpJlqMEhtk4?feature=share
+
+
 obs : descrição do video
 
 
 Siumulador wokwi para ver como foi foi o circuito fisico:
+
+
 https://wokwi.com/projects/398531560393836545
 
 
