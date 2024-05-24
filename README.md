@@ -13,9 +13,10 @@ Projeto Medkids
 
 
 
-1ESPA---- FIAP - Unidade Paulista 
-- Beatriz Rocha RM:
-- Carolina Machado RM:
-- Edson Leonardo RM:
-- Eduardo Mazelli RM:
-- Nathan Uflacker RM:
+1ESPA---- FIAP - Unidade Paulista
+Integrantes : 
+- Beatriz Rocha RM: 553455
+- Carolina Machado RM: 552925
+- Edson Leonardo RM: 553737
+- Eduardo Mazelli RM: 553236
+- Nathan Uflacker RM: 553264
