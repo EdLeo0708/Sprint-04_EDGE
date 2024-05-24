@@ -1,5 +1,110 @@
 [
     {
+        "id": "1161491e8df810d1",
+        "type": "tab",
+        "label": "sprint 4",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "284ec572095b2330",
+        "type": "serial in",
+        "z": "1161491e8df810d1",
+        "name": "",
+        "serial": "ad58f616c15f4d9c",
+        "x": 350,
+        "y": 280,
+        "wires": [
+            [
+                "45a37687bcb3f30e",
+                "fed612e988d11a7f",
+                "d580f1135ebb4279",
+                "2fca9a640221d1da",
+                "57798fa4386084fc",
+                "90725e83a9bbc99e"
+            ]
+        ]
+    },
+    {
+        "id": "45a37687bcb3f30e",
+        "type": "json",
+        "z": "1161491e8df810d1",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 590,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1c7ac8b87665ecc0",
+        "type": "mqtt out",
+        "z": "1161491e8df810d1",
+        "name": "",
+        "topic": "tago/data/post",
+        "qos": "2",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "74d6e0773d4bca27",
+        "x": 940,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "6a7f057638db72ab",
+        "type": "inject",
+        "z": "1161491e8df810d1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"b1\":30,\"b2\":39,\"b3\":72,\"b4\":15,\"b5\":91}",
+        "payloadType": "json",
+        "x": 370,
+        "y": 220,
+        "wires": [
+            [
+                "fed612e988d11a7f",
+                "d580f1135ebb4279",
+                "57798fa4386084fc",
+                "2fca9a640221d1da",
+                "90725e83a9bbc99e"
+            ]
+        ]
+    },
+    {
+        "id": "f408ce35b2b57081",
+        "type": "debug",
+        "z": "1161491e8df810d1",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 940,
+        "y": 340,
+        "wires": []
+    },
+    {
         "id": "fed612e988d11a7f",
         "type": "change",
         "z": "1161491e8df810d1",
@@ -26,5 +131,168 @@
                 "1c7ac8b87665ecc0"
             ]
         ]
+    },
+    {
+        "id": "d580f1135ebb4279",
+        "type": "change",
+        "z": "1161491e8df810d1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.b2",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 620,
+        "y": 240,
+        "wires": [
+            [
+                "f408ce35b2b57081",
+                "1c7ac8b87665ecc0"
+            ]
+        ]
+    },
+    {
+        "id": "2fca9a640221d1da",
+        "type": "change",
+        "z": "1161491e8df810d1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.b4",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 620,
+        "y": 320,
+        "wires": [
+            [
+                "f408ce35b2b57081",
+                "1c7ac8b87665ecc0"
+            ]
+        ]
+    },
+    {
+        "id": "90725e83a9bbc99e",
+        "type": "change",
+        "z": "1161491e8df810d1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.b5",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 620,
+        "y": 360,
+        "wires": [
+            [
+                "f408ce35b2b57081",
+                "1c7ac8b87665ecc0"
+            ]
+        ]
+    },
+    {
+        "id": "57798fa4386084fc",
+        "type": "change",
+        "z": "1161491e8df810d1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.b3",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 620,
+        "y": 280,
+        "wires": [
+            [
+                "f408ce35b2b57081",
+                "1c7ac8b87665ecc0"
+            ]
+        ]
+    },
+    {
+        "id": "ad58f616c15f4d9c",
+        "type": "serial-port",
+        "name": "",
+        "serialport": "COM5",
+        "serialbaud": "9600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "74d6e0773d4bca27",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "mqtt.tago.io",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
     }
 ]
