@@ -1,0 +1,121 @@
+// Definição dos pinos
+#define lv1 2
+#define lv2 4
+#define la 19 // mudar para 19
+#define Ll 18 // mudar para 18
+#define Lv 5
+
+#define b1 12 // var1 = 0 ->quando o botão clicar -> var1 = 1
+#define b2 14
+#define b3 27
+#define b4 26
+#define b5 25 // var
+
+#define buzzer 15
+
+// Variáveis para os estados dos botões
+bool buttonState1 = LOW;
+bool buttonState2 = LOW;
+bool buttonState3 = LOW;
+bool buttonState4 = LOW;
+bool buttonState5 = LOW;
+
+// Funções para tocar o buzzer com sons diferentes
+void playBuzzerVeryHappy() {
+  int melody[] = {262, 330, 392, 523}; // Notas musicais muito animadas
+  for (int i = 0; i < 4; i++) {
+    tone(buzzer, melody[i]);
+    delay(200); // Duração de cada nota
+  }
+  noTone(buzzer); // Parar o buzzer
+}
+
+void playBuzzerHappy() {
+  int melody[] = {262, 294, 330, 349}; // Notas musicais animadas
+  for (int i = 0; i < 4; i++) {
+    tone(buzzer, melody[i]);
+    delay(300); // Duração de cada nota
+  }
+  noTone(buzzer); // Parar o buzzer
+}
+
+void playBuzzerNeutral() {
+  int melody[] = {262, 294, 330}; // Notas musicais +/- animadas
+  for (int i = 0; i < 3; i++) {
+    tone(buzzer, melody[i]);
+    delay(400); // Duração de cada nota
+  }
+  noTone(buzzer); // Parar o buzzer
+}
+
+void playBuzzerSad() {
+  int melody[] = {330, 294, 262}; // Notas musicais tristes
+  for (int i = 0; i < 3; i++) {
+    tone(buzzer, melody[i]);
+    delay(500); // Duração de cada nota
+  }
+  noTone(buzzer); // Parar o buzzer
+}
+
+void playBuzzerVerySad() {
+  int melody[] = {392, 349, 330, 294}; // Notas musicais muito tristes
+  for (int i = 0; i < 4; i++) {
+    tone(buzzer, melody[i]);
+    delay(600); // Duração de cada nota
+  }
+  noTone(buzzer); // Parar o buzzer
+}
+
+void setup() {
+  // Configurar os pinos dos LEDs como saída
+  pinMode(lv1, OUTPUT);
+  pinMode(lv2, OUTPUT);
+  pinMode(la, OUTPUT);
+  pinMode(Ll, OUTPUT);
+  pinMode(Lv, OUTPUT);
+  
+  // Configurar os pinos dos botões como entrada
+  pinMode(b1, INPUT);
+  pinMode(b2, INPUT);
+  pinMode(b3, INPUT);
+  pinMode(b4, INPUT);
+  pinMode(b5, INPUT);
+  
+  // Configurar o pino do buzzer como saída
+  pinMode(buzzer, OUTPUT);
+}
+
+void loop() {
+  // Ler os estados dos botões
+  buttonState1 = digitalRead(b1);
+  buttonState2 = digitalRead(b2);
+  buttonState3 = digitalRead(b3);
+  buttonState4 = digitalRead(b4);
+  buttonState5 = digitalRead(b5);
+  
+  // Verificar se algum botão foi pressionado
+  if (buttonState1 == HIGH) {
+    digitalWrite(lv1, HIGH); // Acender LED verde claro
+    playBuzzerVeryHappy(); // Tocar buzzer muito animado
+    digitalWrite(lv1, LOW); // Apagar LED
+  } else if (buttonState2 == HIGH) {
+    digitalWrite(lv2, HIGH); // Acender LED verde escuro
+    playBuzzerHappy(); // Tocar buzzer animado
+    digitalWrite(lv2, LOW); // Apagar LED
+  } else if (buttonState3 == HIGH) {
+    digitalWrite(la, HIGH); // Acender LED amarelo
+    playBuzzerNeutral(); // Tocar buzzer +/- animado
+    digitalWrite(la, LOW); // Apagar LED
+  } else if (buttonState4 == HIGH) {
+    digitalWrite(Ll, HIGH); // Acender LED laranja
+    playBuzzerSad(); // Tocar buzzer triste
+    digitalWrite(Ll, LOW); // Apagar LED
+  } else if (buttonState5 == HIGH) {
+    digitalWrite(Lv, HIGH); // Acender LED vermelho
+    playBuzzerVerySad(); // Tocar buzzer muito triste
+    digitalWrite(Lv, LOW); // Apagar LED
+  }
+  
+  // Pequena pausa para debouncing dos botões
+  delay(100);
+}

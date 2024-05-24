@@ -1,0 +1,30 @@
+[
+    {
+        "id": "fed612e988d11a7f",
+        "type": "change",
+        "z": "1161491e8df810d1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.b1",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 620,
+        "y": 200,
+        "wires": [
+            [
+                "f408ce35b2b57081",
+                "1c7ac8b87665ecc0"
+            ]
+        ]
+    }
+]
